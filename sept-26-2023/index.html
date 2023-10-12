@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Movie(title, year, moneyMade) {
+            this.title = title;
+            this.year = year;
+            this.moneyMade = moneyMade;
+            this.displayMessage = function() {
+                console.log(`title ${this.title}, year ${this.year}, moneyMade ${this.moneyMade}`)
+            }
+        }
+
+        // Movie.prototype.displayMessage = function() {
+        //         console.log(`title ${this.title}, year ${this.year}, moneyMade ${this.moneyMade}`)
+        // }
+
+        const oppenheimer = new Movie('Oppenheimer', 2023, 'lots!');
+        const barbie = new Movie('Barbie', 2023, 'lots!');
+
+        oppenheimer.displayMessage();
+        barbie.displayMessage()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

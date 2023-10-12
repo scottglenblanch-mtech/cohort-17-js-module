@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Total
+    </title>
+    <script>
+    
+        // calculating the total
+        // - grab the price amount
+        // - grab the percentage amount
+        // - calculate
+        // - then display
+
+        function getThePriceAmount() {
+            const element = document.querySelector('#price');
+            const value = element.value;
+            const valueAsNumber = Number(value);
+
+            return valueAsNumber;
+        }
+
+        function getThePercentageAmount() {
+            const element = document.querySelector('#percentage');
+            const value = element.value;
+            const valueAsNumber = Number(value);
+
+            return valueAsNumber;
+        }
+
+        function getTotal() {
+            // grab the inputs
+            const priceAmount = getThePriceAmount()
+            const percentage = getThePercentageAmount();
+            const additionalCost = priceAmount * (percentage/100)
+            const total = priceAmount + additionalCost;
+
+            return total;
+            // get the extra percentage piece from the total
+            // add the extra percentage piece
+            // return the toal
+        }
+
+        function showTheTotal() {
+            const total = getTotal();
+            const element = document.querySelector('#show-total');
+
+            element.textContent = total;
+        }
+    </script>
+</head>
+<body>
+    <!--
+- Page will have
+    - input for price of item
+    - input to add in sales tax
+    - button to calculate the total
+    - place to show the total
+
+Hints
+- how to grab a value of an input element: 
+    - https://www.w3schools.com/jsref/prop_text_value.asp
+    - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
+- how to convert a string to a number
+    - https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascript/
+
+    -->
+
+    <label>Price</label><input id="price" type="number"/>
+    <br />
+    <label>Percentage</label><input id="percentage" type="number"/>
+    <span>%</span>
+    <br />
+    <button id="calculate" onclick="showTheTotal()">Calculate</button>
+    <div>
+        <label>Total</label>
+        <div id="show-total"></div>
+    </div>
+
+</body>
+</html>

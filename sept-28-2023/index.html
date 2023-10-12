@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .crossed-out {
+            text-decoration: line-through;
+        }
+    </style>
+    <script>
+        // add a todo
+        // bind the click to the button to add a todo
+
+        // click function on button
+        // - grab the text inside the input
+        // - then add the text to a new todo in the todo section
+        
+        function handleClickOnTodoItem(event) {
+            const todoItemElement = event.target;
+
+            todoItemElement.classList.add('crossed-out');
+        }
+        
+        function handleButtonClick() {
+            // console.log('clicked button')
+            const userInput = document.querySelector('.user-input').value;
+            const todoListElement = document.querySelector('.todo-list');
+
+            const newTodoItemElement = document.createElement('li');
+
+            newTodoItemElement.classList.add('todo-item');
+            newTodoItemElement.addEventListener('click', handleClickOnTodoItem);
+            newTodoItemElement.textContent = userInput;
+
+            
+            todoListElement.append(newTodoItemElement);
+
+        }
+
+        window.onload = function() {
+            document.querySelector(".add-todo-button")
+                .addEventListener('click', handleButtonClick)
+        }
+    </script>
+</head>
+<body>
+    <!--
+- Create a website
+- todo list
+- have an input for todo
+- have a button to click
+
+- when you click the button it will show on the page
+- if you click the todo item it will cross it out. 
+
+
+    -->
+    <input class="user-input" type="text" placeholder="add a todo" />
+    <button class="add-todo-button">Add Todo to the List</button>
+    <ul class="todo-list">
+    </ul>
+
+
+</body>
+</html>

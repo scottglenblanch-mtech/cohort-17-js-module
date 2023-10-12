@@ -1,2 +1,3 @@
-# cohort-17-js-module
-In Class Code Examples
+# Cohort 17 JS Module 
+
+This is a repo with in class examples
